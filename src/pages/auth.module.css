@@ -401,18 +401,15 @@
 }
 
 .otpBox {
-  width: 46px;
-  height: 54px;
+  width: 50px;       /* fixed width */
+  aspect-ratio: 1;   /* height = width automatically */
   text-align: center;
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 200;
   background: var(--bg-input);
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
   color: var(--text-primary);
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
-  cursor: text;
 }
 
 .otpBox:focus {
