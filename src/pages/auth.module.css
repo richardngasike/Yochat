@@ -265,15 +265,15 @@
 }
 
 .otpInput {
-  aspect-ratio: 1;
+  width: 50px;       
+  aspect-ratio: 1;   
   text-align: center;
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 200;
   background: var(--bg-input);
   border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  transition: border-color var(--transition), background var(--transition);
 }
 
 .otpInput:focus {
