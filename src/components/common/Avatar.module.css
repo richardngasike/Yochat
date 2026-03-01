@@ -1,0 +1,49 @@
+.avatar {
+  position: relative;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.clickable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  user-select: none;
+}
+
+.status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  border: 2px solid var(--bg-secondary);
+}
+
+.status[data-status='online'] { background: var(--status-online); }
+.status[data-status='away'] { background: var(--status-away); }
+.status[data-status='busy'] { background: var(--status-busy); }
+.status[data-status='offline'] { background: var(--status-offline); }

@@ -1,0 +1,231 @@
+/* === yochat GLOBAL STYLES === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Brand Colors */
+  --primary: #6C63FF;
+  --primary-dark: #5A52E0;
+  --primary-light: #8B84FF;
+  --secondary: #FF6584;
+  --accent: #43E97B;
+
+  /* Dark Theme (Default) */
+  --bg-primary: #0d0d1a;
+  --bg-secondary: #13132b;
+  --bg-tertiary: #1a1a35;
+  --bg-hover: #22224a;
+  --bg-active: #2a2a5a;
+  --bg-card: #161628;
+  --bg-input: #1e1e3a;
+  --bg-overlay: rgba(0,0,0,0.85);
+
+  /* Text */
+  --text-primary: #e8e8f8;
+  --text-secondary: #9090b8;
+  --text-muted: #5a5a80;
+  --text-inverse: #0d0d1a;
+
+  /* Border */
+  --border: #2a2a50;
+  --border-light: #1e1e3a;
+
+  /* Messages */
+  --msg-sent: #6C63FF;
+  --msg-sent-text: #ffffff;
+  --msg-received: #1e1e3a;
+  --msg-received-text: #e8e8f8;
+
+  /* Status */
+  --status-online: #43E97B;
+  --status-away: #FFB830;
+  --status-busy: #FF4B4B;
+  --status-offline: #5a5a80;
+
+  /* Misc */
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition: 0.2s ease;
+  --sidebar-width: 380px;
+}
+
+[data-theme='light'] {
+  --bg-primary: #f0f0ff;
+  --bg-secondary: #e8e8ff;
+  --bg-tertiary: #ffffff;
+  --bg-hover: #e0e0ff;
+  --bg-active: #d4d4ff;
+  --bg-card: #ffffff;
+  --bg-input: #ededff;
+  --bg-overlay: rgba(0,0,0,0.5);
+  --text-primary: #1a1a35;
+  --text-secondary: #5a5a8a;
+  --text-muted: #9090b8;
+  --border: #d0d0f0;
+  --border-light: #e8e8ff;
+  --msg-received: #f0f0ff;
+  --msg-received-text: #1a1a35;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  height: 100dvh;
+}
+
+#__next {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+
+
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: initial; }
+  30% { transform: translateY(-6px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--primary); }
+  50% { box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-light); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+
+/* Common utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-hover) 50%, var(--bg-tertiary) 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.5s ease infinite;
+  border-radius: var(--radius-sm);
+}
