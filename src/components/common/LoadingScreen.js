@@ -10,8 +10,8 @@ export default function LoadingScreen({ message = 'Loading yochat...' }) {
             <Image
               src="/YoChat-Logo.png"
               alt="YoChat Logo"
-              width={70}
-              height={70}
+              width={150}
+              height={150}
               priority
             />
           </div>
