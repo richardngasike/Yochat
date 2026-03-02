@@ -8,14 +8,13 @@ export default function LoadingScreen({ message = 'Loading yochat...' }) {
         <div className={styles.logo}>
           <div className={styles.logoIcon}>
             <Image
-              src="/LogoBlack.png"
+              src="/Yochatlogo.png"
               alt="YoChat Logo"
-              width={48}
-              height={48}
+              width={70}
+              height={70}
               priority
             />
           </div>
-          <span className={styles.logoText}>YoChat</span>
         </div>
 
         <div className={styles.waveLoader}>
